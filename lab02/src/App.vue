@@ -3,9 +3,10 @@
     <header>
       <div class="wrapper">
         <nav>
-          <RouterLink to="/">Events</RouterLink> |
-          <RouterLink to="/about">About</RouterLink> |
-          <RouterLink to="/students">Students</RouterLink>
+          <RouterLink :to="{ name: 'event-list-view' }">Events</RouterLink> |
+          <RouterLink :to="{ name: 'student-list-view' }">Students</RouterLink> |
+          <RouterLink :to="{ name: 'about' }">About</RouterLink>
+          
         </nav>
       </div>
     </header>
