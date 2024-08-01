@@ -9,7 +9,17 @@ const routes = [
     path: '/',
     name: 'event-list-view',
     component: EventListView,
+    props: (route) => ({ 
+      page: parseInt(route.query.page?.toString() || '1' ),
+      pageSize: parseInt(route.query.pageSize?.toString() || '4') })
   },
+  {
+    path: '/event/:id',
+    name: 'event-detail-view',
+    component: EventDetailView,
+    props: true
+  },
+
   {
     path: '/students',
     name: 'student-list-view',
