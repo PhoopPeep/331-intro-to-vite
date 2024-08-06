@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import { type Event } from '@/types'
 import EventService from '@/services/EventService'
 import { useRouter } from 'vue-router';
+import nProgress from 'nprogress';
 
 const event = ref<Event | null>(null)
 const props = defineProps({
