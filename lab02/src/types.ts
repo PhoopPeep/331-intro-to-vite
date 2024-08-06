@@ -20,3 +20,7 @@ export interface Student {
 export interface MessageState {
     message: String
 }
+
+export interface EventState {
+    event: Event | null
+}
