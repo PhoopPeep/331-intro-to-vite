@@ -1,6 +1,9 @@
 <template>
   <div id="layout">
     <header>
+      <div id="flashMessage" v-if="message">
+        <h4>{{ message }}</h4>
+      </div>
       <div class="wrapper">
         <nav>
           <RouterLink :to="{ name: 'event-list-view' }">Events</RouterLink> |
@@ -24,6 +27,11 @@
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useRouter, useRoute } from 'vue-router'
+import { useMessageStore } from './stores/message';
+import { storeToRefs } from 'pinia';
+
+const store = useMessageStore()
+const { message } = storeToRefs(store)
 
 const pageSizes = [2, 4, 6, 8, 10]
 const pageSize = ref(pageSizes[1])
@@ -63,5 +71,18 @@ nav a {
 
 nav a .router-link-exact-active {
   color: #42b983;
+}
+
+@keyframes yellofade {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+#flashMessage {
+  animation: yellofade 3s ease-in-out; 
 }
 </style>
