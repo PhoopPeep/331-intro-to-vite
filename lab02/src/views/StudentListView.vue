@@ -16,32 +16,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="students">
+  <div class="flex flex-col items-center">
     <h1>Student List</h1>
-    <div v-for="student in students" :key="student.id" class="student-card">
+    <div v-for="student in students" :key="student.id" class="cursor-pointer border border-gray-600 p-4 w-64 mb-6 hover:scale-101 hover:shadow-sp">
       <h2>{{ student.name }} {{ student.surname }}</h2>
       <p>GPA: {{ student.gpa }}</p>
     </div>
   </div>
 </template>
-
-<style scoped>
-.students {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.student-card {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-}
-
-.student-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
-}
-</style>

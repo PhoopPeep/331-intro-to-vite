@@ -21,6 +21,6 @@ const register = () => {
 }
 </script>
 <template>
-  <p>Register event here</p>
-  <button @click="register">Register Me!</button>
+  <p class="mt-8">Register event here</p>
+  <button class="m-8 rounded-md ring ring-green-500 ring-offset-2 hover:scale-101 hover:shadow-sp" @click="register">Register Me!</button>
 </template>

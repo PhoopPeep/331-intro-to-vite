@@ -1,14 +1,14 @@
 <template>
   <div class="text-center font-sans text-gray-700 antialias">
     <header>
-      <div id="flashMessage" v-if="message">
+      <div class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
       <div class="wrapper">
-        <nav>
-          <RouterLink :to="{ name: 'event-list-view' }">Events</RouterLink> |
-          <RouterLink :to="{ name: 'student-list-view' }">Students</RouterLink> |
-          <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <nav class="py-6">
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Events</RouterLink> |
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'student-list-view' }">Students</RouterLink> |
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink>
         </nav>
         <div>
           <label for="page-size">Events per page: </label>
@@ -50,31 +50,3 @@ if (route.query.pageSize) {
   pageSize.value = parseInt(route.query.pageSize.toString())
 }
 </script>
-
-<style>
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-@keyframes yellofade {
-  from {
-    background-color: yellow;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-
-#flashMessage {
-  animation: yellofade 3s ease-in-out; 
-}
-</style>
