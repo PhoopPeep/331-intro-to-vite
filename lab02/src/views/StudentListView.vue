@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { type Student } from '@/types';
 import StudentService from '@/services/StudentService'
+import { useRoute } from 'vue-router';
 
-const students = ref([])
+const students = ref<Student[] | null>(null)
+const route = useRoute()
 
 onMounted(() => {
   StudentService.getStudents()
