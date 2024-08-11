@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { type Event } from '@/types';
-  defineProps<{
-    event: Event
-  }>();
+import { type Event } from '@/types'
+defineProps<{
+  event: Event
+}>()
 // const event = ref({
 //   id: 5928101,
 //   category: 'animal welfare',
@@ -18,7 +18,9 @@ import { type Event } from '@/types';
 
 <template>
   <RouterLink class="text-gray-700" :to="{ name: 'event-detail-view', params: { id: event.id } }">
-    <div class="cursor-pointer border border-gray-600 p-4 w-64 mb-6 hover:scale-101 hover:shadow-sp">
+    <div
+      class="cursor-pointer border border-gray-600 p-4 w-64 mb-6 hover:scale-101 hover:shadow-sp"
+    >
       <h2>{{ event.title }}</h2>
       <span>@{{ event.time }} on {{ event.date }}</span>
     </div>

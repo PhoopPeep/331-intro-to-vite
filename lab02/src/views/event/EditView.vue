@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { toRefs } from 'vue'
 import { type Event } from '@/types'
-import { useRouter } from 'vue-router';
-import { useMessageStore } from '@/stores/message';
+import { useRouter } from 'vue-router'
+import { useMessageStore } from '@/stores/message'
 
 const props = defineProps<{
   event: Event
@@ -22,5 +22,10 @@ const edit = () => {
 </script>
 <template>
   <p class="mt-8">Edit event here</p>
-  <button class="m-8 rounded-md ring ring-green-500 ring-offset-2 hover:scale-101 hover:shadow-sp" @click="edit">Edit here!</button>
+  <button
+    class="m-8 rounded-md ring ring-green-500 ring-offset-2 hover:scale-101 hover:shadow-sp"
+    @click="edit"
+  >
+    Edit here!
+  </button>
 </template>

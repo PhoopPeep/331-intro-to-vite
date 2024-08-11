@@ -7,9 +7,26 @@
       </div>
       <div class="wrapper">
         <nav class="py-6">
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Events</RouterLink> |
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'student-list-view' }">Students</RouterLink> |
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink>
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'event-list-view' }"
+            >Events</RouterLink
+          >
+          |
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'student-list-view' }"
+            >Students</RouterLink
+          >
+          |
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'about' }"
+            >About</RouterLink
+          >
         </nav>
         <div>
           <label for="page-size">Events per page: </label>
@@ -28,9 +45,8 @@
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useRouter, useRoute } from 'vue-router'
-import { useMessageStore } from './stores/message';
-import { storeToRefs } from 'pinia';
-
+import { useMessageStore } from './stores/message'
+import { storeToRefs } from 'pinia'
 
 const store = useMessageStore()
 const { message } = storeToRefs(store)
