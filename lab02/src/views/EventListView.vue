@@ -4,7 +4,6 @@ import { type Event } from '@/types'
 import CategoryOrganizer from '@/components/CategoryOrganizer.vue'
 import { ref, onMounted, computed, watchEffect } from 'vue'
 import EventService from '@/services/EventService'
-import { error } from 'console'
 import { useRoute } from 'vue-router'
 
 const events = ref<Event[] | null>(null)
@@ -48,8 +47,8 @@ onMounted(() => {
   <div class="flex flex-col items-center">
     <h1>Events For Good</h1>
     <!-- new element -->
-    <EventCard v-for="event in events" key="event.id" :event="event" />
-    <!-- <CategoryOrganizer v-for="event in events" key="event.id" :event="event" /> -->
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <!-- <CategoryOrganizer v-for="event :in events" key="event.id" :event="event" /> -->
     <div class="flex w-72 text-gray-700">
       <RouterLink
         class="flex-1 text-left"
